@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: -6979714528961782056
     second: Red Angry Bird
+  - first:
+      213: 3880404249073630250
+    second: Catapault_Back
+  - first:
+      213: -8614203258021995029
+    second: Catapault_Front
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +120,7 @@ TextureImporter:
         width: 52
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,6 +128,48 @@ TextureImporter:
       bones: []
       spriteID: 8de9993bd92132f90800000000000000
       internalID: -6979714528961782056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catapault_Back
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 39
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c33f2fa17f9d530800000000000000
+      internalID: 3880404249073630250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catapault_Front
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 842
+        width: 45
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed169ed6c3347880800000000000000
+      internalID: -8614203258021995029
       vertices: []
       indices: 
       edges: []

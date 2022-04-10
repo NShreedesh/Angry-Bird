@@ -1,93 +1,115 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class LaunchBird : MonoBehaviour
 {
     [Header("Controller Info")]
     [SerializeField] private PlayerController controller;
 
-    [Header("Camera Info")]
+    [Header("Mouse Input Info")]
     [SerializeField] private Camera cam;
+    private Vector2 _mousePosition;
 
     [Header("Bird Launch Info")]
-    [SerializeField] private float launchForce;
-    private bool _canLaunch;
-    private bool _isReadyToLaunch;
-    private Vector2 dragStartValue;
-    private Vector2 dragEndValue;
-
-    [Header("Raycast Info")]
+    [SerializeField] private float force;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float birdPositionOffset;
+    private Bird _bird;
+    private bool _canLaunch;
+    private Vector2 _dragStartPosition;
+    private Vector2 _dragEndPosition;
+    private Vector2 _dragForce;
+
+    [Header("Catapult Stips Info")]
+    [SerializeField] private LineRenderer frontStripLineRenderer;
+    [SerializeField] private LineRenderer backStripLineRenderer;
+
+    [Header("Trajectory Info")]
+    [SerializeField] private GameObject trajectoryPoint;
+    private GameObject[] _trajectoryPoints;
+    [SerializeField] private int howManyTrajectoryPoints;
+    [SerializeField] private Transform trajectoryPointsParent;
 
     private void Start()
     {
-        controller.rb.bodyType = RigidbodyType2D.Kinematic;
+        ResetStrips();
+        _trajectoryPoints = new GameObject[howManyTrajectoryPoints];
+
+        for(int i = 0; i < howManyTrajectoryPoints; i++)
+        {
+            _trajectoryPoints[i] = Instantiate(trajectoryPoint, transform.position, Quaternion.identity, trajectoryPointsParent);
+        }
     }
 
     private void Update()
     {
-        if (SystemInfo.deviceType == DeviceType.Desktop)
-        {
-            DesktopControls();
-        }
-        if (SystemInfo.deviceType == DeviceType.Handheld)
-        {
-            MobileControls();
-        }
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (_canLaunch)
-        {
-            Launch();
-            _isReadyToLaunch = false;
-            _canLaunch = false;
-        }
-    }
-
-    private void DesktopControls()
-    {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            if (Physics2D.Raycast(cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, 100, playerLayer))
-            {
-                dragStartValue = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                _isReadyToLaunch = true;
-            }
-        }
-        if (Mouse.current.leftButton.wasReleasedThisFrame && _isReadyToLaunch)
-        {
-            dragEndValue = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            _canLaunch = true;
-        }
-    }
-
-    private void MobileControls()
-    {
-
-        if (Touchscreen.current.press.wasPressedThisFrame)
-        {
-            if (Physics2D.Raycast(cam.ScreenToWorldPoint(Touchscreen.current.position.ReadValue()), Vector2.zero, 100, playerLayer))
-            {
-                dragStartValue = cam.ScreenToWorldPoint(Touchscreen.current.position.ReadValue());
-                _isReadyToLaunch = true;
-            }
-        }
-        if (Touchscreen.current.press.wasReleasedThisFrame && _isReadyToLaunch)
-        {
-            dragEndValue = cam.ScreenToWorldPoint(Touchscreen.current.position.ReadValue());
-            _canLaunch = true;
-        }
+        Launch();
     }
 
     private void Launch()
     {
-        Vector2 dragForce = dragStartValue - dragEndValue;
-        controller.rb.bodyType = RigidbodyType2D.Dynamic;
-        controller.rb.velocity = Vector2.zero;
-        controller.rb.AddForce(dragForce * launchForce, ForceMode2D.Impulse);
-        dragForce = Vector2.zero;
+        // TODO: Launch only on certain distance...
+
+        if (controller.inputControls.isLeftMousePressed)
+        {
+            _mousePosition = cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
+            RaycastHit2D hitInfo = Physics2D.Raycast(_mousePosition, Vector2.zero, playerLayer);
+
+            if (hitInfo)
+            {
+                hitInfo.transform.TryGetComponent<Bird>(out _bird);
+                if (_bird.isLaunched) return;
+                _dragStartPosition = hitInfo.transform.position;
+                _canLaunch = true;
+            }
+        }
+
+        if (controller.inputControls.leftMouseInput > 0 && _canLaunch)
+        {
+            _mousePosition = cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
+            _dragEndPosition = _mousePosition;
+            _dragForce = (_dragEndPosition - _dragStartPosition) * -force;
+            SetStrips(_mousePosition);
+
+            for (int i = 0; i < howManyTrajectoryPoints; i++)
+            {
+                _trajectoryPoints[i].transform.position = CalculateTrajectoryPosition(i * 0.05f);
+            }
+        }
+
+        else if (controller.inputControls.leftMouseInput <= 0 && _canLaunch)
+        {
+            controller.rb.isKinematic = false;
+            controller.rb.velocity = _dragForce;
+            _bird.isLaunched = true;
+            _canLaunch = false;
+        }
+    }
+
+    private void SetStrips(Vector2 position)
+    {
+        Vector2 dir = position - _dragStartPosition;
+        Vector2 birdTransformPos = position + dir.normalized * birdPositionOffset;
+
+        if(_bird != null)
+        {
+            _bird.transform.position = birdTransformPos;
+            _bird.transform.right = -dir.normalized;
+        }
+
+        frontStripLineRenderer.SetPosition(1, position);
+        backStripLineRenderer.SetPosition(1, position);
+    }
+
+    private void ResetStrips()
+    {
+        frontStripLineRenderer.SetPosition(0, frontStripLineRenderer.transform.position);
+        frontStripLineRenderer.SetPosition(1, frontStripLineRenderer.transform.position);
+        backStripLineRenderer.SetPosition(0, backStripLineRenderer.transform.position);
+        backStripLineRenderer.SetPosition(1, backStripLineRenderer.transform.position);
+    }
+
+    private Vector2 CalculateTrajectoryPosition(float time)
+    {
+        return (Vector2)controller.bird.transform.position + (_dragForce * time) + (0.5f * Physics2D.gravity * time * time);
     }
 }

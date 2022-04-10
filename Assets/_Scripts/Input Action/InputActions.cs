@@ -26,14 +26,80 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             ""name"": ""Player"",
             ""id"": ""df669175-3f3a-4af6-b0dd-34b4419b3810"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""LeftMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""051cefb8-98fd-47d2-b9b8-f42f431baa24"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Position"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""a89e938a-9854-470b-81f7-2fea658ff058"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""922f55ac-e892-4f27-9fd0-9ae04e07e009"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa636031-caaf-44ca-a92b-764e5fb2274f"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19211db5-0101-4b3f-9166-c5b54c90c432"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a8a5dd9-095c-48f4-a424-177b079c3945"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_LeftMouse = m_Player.FindAction("LeftMouse", throwIfNotFound: true);
+        m_Player_Position = m_Player.FindAction("Position", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -93,10 +159,14 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_LeftMouse;
+    private readonly InputAction m_Player_Position;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftMouse => m_Wrapper.m_Player_LeftMouse;
+        public InputAction @Position => m_Wrapper.m_Player_Position;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -106,15 +176,29 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
+                @LeftMouse.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftMouse;
+                @Position.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
+                @Position.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
+                @Position.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPosition;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @LeftMouse.started += instance.OnLeftMouse;
+                @LeftMouse.performed += instance.OnLeftMouse;
+                @LeftMouse.canceled += instance.OnLeftMouse;
+                @Position.started += instance.OnPosition;
+                @Position.performed += instance.OnPosition;
+                @Position.canceled += instance.OnPosition;
             }
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
+        void OnLeftMouse(InputAction.CallbackContext context);
+        void OnPosition(InputAction.CallbackContext context);
     }
 }
