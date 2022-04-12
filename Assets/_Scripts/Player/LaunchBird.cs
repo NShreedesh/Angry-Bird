@@ -6,14 +6,15 @@ public class LaunchBird : MonoBehaviour
     [SerializeField] private PlayerController controller;
 
     [Header("Mouse Input Info")]
-    [SerializeField] private Camera cam;
+    private Camera _cam;
     private Vector2 _mousePosition;
 
     [Header("Bird Launch Info")]
-    [SerializeField] private float force;
+    [SerializeField] private float force = 5.5f;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float birdPositionOffset;
-    private Bird _bird;
+    [SerializeField] private float maxLength = 2;
+    [SerializeField] private float maxBottomLength = 2;
     private bool _canLaunch;
     private Vector2 _dragStartPosition;
     private Vector2 _dragEndPosition;
@@ -31,10 +32,14 @@ public class LaunchBird : MonoBehaviour
 
     private void Start()
     {
+        _cam = Camera.main;
+
         ResetStrips();
         _trajectoryPoints = new GameObject[howManyTrajectoryPoints];
 
-        for(int i = 0; i < howManyTrajectoryPoints; i++)
+        trajectoryPointsParent.gameObject.SetActive(false);
+
+        for (int i = 0; i < howManyTrajectoryPoints; i++)
         {
             _trajectoryPoints[i] = Instantiate(trajectoryPoint, transform.position, Quaternion.identity, trajectoryPointsParent);
         }
@@ -47,17 +52,17 @@ public class LaunchBird : MonoBehaviour
 
     private void Launch()
     {
-        // TODO: Launch only on certain distance...
-
         if (controller.inputControls.isLeftMousePressed)
         {
-            _mousePosition = cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
+            _mousePosition = _cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
             RaycastHit2D hitInfo = Physics2D.Raycast(_mousePosition, Vector2.zero, playerLayer);
 
             if (hitInfo)
             {
-                hitInfo.transform.TryGetComponent<Bird>(out _bird);
-                if (_bird.isLaunched) return;
+                hitInfo.transform.TryGetComponent<Bird>(out controller.bird);
+                if (controller.bird == null) return;
+                controller.rb = controller.bird.GetComponent<Rigidbody2D>();
+                if (controller.bird.isLaunched) return;
                 _dragStartPosition = hitInfo.transform.position;
                 _canLaunch = true;
             }
@@ -65,23 +70,31 @@ public class LaunchBird : MonoBehaviour
 
         if (controller.inputControls.leftMouseInput > 0 && _canLaunch)
         {
-            _mousePosition = cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
-            _dragEndPosition = _mousePosition;
+            _mousePosition = _cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
+            _dragEndPosition = _dragStartPosition + Vector2.ClampMagnitude(_mousePosition - _dragStartPosition, maxLength);
+            _dragEndPosition.y = Mathf.Clamp(_dragEndPosition.y, maxBottomLength, 1000);
+
             _dragForce = (_dragEndPosition - _dragStartPosition) * -force;
-            SetStrips(_mousePosition);
+
+            SetStrips(_dragEndPosition);
 
             for (int i = 0; i < howManyTrajectoryPoints; i++)
             {
                 _trajectoryPoints[i].transform.position = CalculateTrajectoryPosition(i * 0.05f);
             }
+
         }
 
         else if (controller.inputControls.leftMouseInput <= 0 && _canLaunch)
         {
             controller.rb.isKinematic = false;
+            controller.rb.velocity = Vector2.zero;
             controller.rb.velocity = _dragForce;
-            _bird.isLaunched = true;
+            controller.bird.isLaunched = true;
+            ResetStrips();
             _canLaunch = false;
+
+            Invoke(nameof(RespawnBird), 2);
         }
     }
 
@@ -90,14 +103,15 @@ public class LaunchBird : MonoBehaviour
         Vector2 dir = position - _dragStartPosition;
         Vector2 birdTransformPos = position + dir.normalized * birdPositionOffset;
 
-        if(_bird != null)
+        if (controller.bird != null)
         {
-            _bird.transform.position = birdTransformPos;
-            _bird.transform.right = -dir.normalized;
+            controller.bird.transform.position = birdTransformPos;
         }
 
         frontStripLineRenderer.SetPosition(1, position);
         backStripLineRenderer.SetPosition(1, position);
+
+        trajectoryPointsParent.gameObject.SetActive(true);
     }
 
     private void ResetStrips()
@@ -110,6 +124,11 @@ public class LaunchBird : MonoBehaviour
 
     private Vector2 CalculateTrajectoryPosition(float time)
     {
-        return (Vector2)controller.bird.transform.position + (_dragForce * time) + (0.5f * Physics2D.gravity * time * time);
+        return (Vector2)controller.bird.transform.position + (_dragForce * time) + (0.5f * time * time * Physics2D.gravity);
+    }
+
+    private void RespawnBird()
+    {
+        controller.SpawnBird();
     }
 }
