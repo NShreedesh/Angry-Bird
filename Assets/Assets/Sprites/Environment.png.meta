@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Tree: 5301501663308424188
+      Grass1: -8611688589887310195
+      Trees: 6204020555285148681
+      Grass3: 1243679203119708505
+      Sky: 1690984027091663774
+      Ground: -250596111783113037
+      Soil: -3494628820807513724
+      Grass2: 8999072330452394899
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
