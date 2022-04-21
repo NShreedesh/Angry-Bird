@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Bird Info")]
     public GameObject birdPrefab;
     public Transform birdSpawnTransform;
-    [HideInInspector] public Bird bird;
+    public Bird bird;
 
     [Header("Physics Info")]
     public Rigidbody2D rb;

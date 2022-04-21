@@ -75,7 +75,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -99,6 +99,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -184,7 +196,7 @@ TextureImporter:
         width: 15
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,6 +204,384 @@ TextureImporter:
       bones: []
       spriteID: ac8136f20d7c26a478d0160252ad9f94
       internalID: 751035052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 514
+        width: 101
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0864c9dd366794bb89367c4e5cc36d
+      internalID: -1258499740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 414
+        width: 101
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489bceec1ba711941a4b597c84795e3c
+      internalID: -1933043288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_3
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 316
+        width: 101
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd46ae66da1b644e9307fde1887098f
+      internalID: -920596541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_4
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 217
+        width: 101
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c35ebad47387640bbd72630f50dc5c
+      internalID: 2135166998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_5
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 25
+        width: 101
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8d183a59923554ba9966769f12dc6a
+      internalID: 714045683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_8
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 616
+        width: 97
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2850e967e6e26a438c36471bd1941ba
+      internalID: -38155583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_9
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 617
+        width: 99
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f7a09200b62f943bc526c7e3e7f6bd
+      internalID: 967780284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_6
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 619
+        width: 97
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85ee579f160b31448233cbe7d3e73cb
+      internalID: 242713358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simple Enemy_7
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 618
+        width: 98
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909cd12bd2a3f9b4eb7d7632160ea8b9
+      internalID: -1527150097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedBird_Wing 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb459151a0af5c43953e459be304429
+      internalID: 1132393151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedBird_Wing 2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 316
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d352ef50647df84a85399a48ffeda84
+      internalID: -1886175083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wood1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 38
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65ccd5db6ae398439e12d2373aef10c
+      internalID: 207926600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 123
+        width: 34
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a1d2b68c8747447a2da8022b2af253
+      internalID: 363946975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wood3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 114
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab58ad37a68981944875e24a30ed9685
+      internalID: -1211448689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 342
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc2e177e9e8f7241b31934be259d4a1
+      internalID: -1632786127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 455
+        width: 116
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d7366d0bb705146bc6c676f03ee875
+      internalID: -2062977273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 568
+        width: 126
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fa5bc569c6cb54cb192bf212d4d6b2
+      internalID: 1659870014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 692
+        width: 129
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f4606d08fd1be458989788e2938f92
+      internalID: 1695083504
       vertices: []
       indices: 
       edges: []
@@ -207,9 +597,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Glass 3: 662952777
+      Simple Enemy_9: 967780284
+      Smoke2: -2062977273
       Catapault_Front: -8614203258021995029
       Dot1: 751035052
+      Smoke4: 1695083504
+      Wood3: -1211448689
+      Smoke3: 1659870014
       Catapault_Back: 3880404249073630250
+      Glass 5: -1621092681
+      Simple Enemy_2: -1933043288
+      Glass 4: -548437814
+      Simple Enemy_4: 2135166998
+      Simple Enemy_7: -1527150097
+      Simple Enemy_6: 242713358
+      RedBird_Wing 1: 1132393151
+      Simple Enemy_1: -1258499740
+      Smoke1: -1632786127
+      Wood2: 363946975
+      Glass 2: 1699729970
+      Simple Enemy_8: -38155583
+      Glass 6: -1450595134
+      Simple Enemy_5: 745053716
+      Simple Enemy_3: -920596541
+      RedBird_Wing 2: -1886175083
+      Glass 1: -1255232131
+      wood1: 207926600
       Red Angry Bird: -6979714528961782056
   spritePackingTag: 
   pSDRemoveMatte: 0

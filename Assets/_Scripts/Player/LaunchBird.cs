@@ -60,7 +60,7 @@ public class LaunchBird : MonoBehaviour
             if (hitInfo)
             {
                 hitInfo.transform.TryGetComponent<Bird>(out controller.bird);
-                if (controller.bird == null) return;
+                if (controller.bird is null) return;
                 controller.rb = controller.bird.GetComponent<Rigidbody2D>();
                 if (controller.bird.isLaunched) return;
                 _dragStartPosition = hitInfo.transform.position;
@@ -92,7 +92,7 @@ public class LaunchBird : MonoBehaviour
             controller.rb.velocity = _dragForce;
             controller.bird.isLaunched = true;
             ResetStrips();
-            _canLaunch = false;
+            ResetValues();
 
             Invoke(nameof(RespawnBird), 2);
         }
@@ -120,6 +120,14 @@ public class LaunchBird : MonoBehaviour
         frontStripLineRenderer.SetPosition(1, frontStripLineRenderer.transform.position);
         backStripLineRenderer.SetPosition(0, backStripLineRenderer.transform.position);
         backStripLineRenderer.SetPosition(1, backStripLineRenderer.transform.position);
+    }
+
+    private void ResetValues()
+    {
+        _dragStartPosition = Vector2.zero;
+        _dragEndPosition = Vector2.zero;
+        _dragForce = Vector2.zero;
+        _canLaunch = false;
     }
 
     private Vector2 CalculateTrajectoryPosition(float time)

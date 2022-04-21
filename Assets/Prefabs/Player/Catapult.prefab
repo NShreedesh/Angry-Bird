@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.248, y: 0.486, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8574569241592185485}
   m_Father: {fileID: 8574569241693333042}
@@ -43,6 +44,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -110,6 +112,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.13, y: 0.211, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8574569241478582524}
   m_RootOrder: 0
@@ -125,6 +128,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -241,6 +245,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.93, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8574569241478582524}
   - {fileID: 8574569242256279811}
@@ -294,13 +299,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8574569241693333040}
-  force: 5.5
+  force: 6
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   birdPositionOffset: -0.5
   maxLength: 2
-  maxBottomLength: -3.5
+  maxBottomLength: -3.2
   frontStripLineRenderer: {fileID: 8574569241592185474}
   backStripLineRenderer: {fileID: 8574569242241008467}
   trajectoryPoint: {fileID: 4724225097156155813, guid: c2bd8a4574be32f4f9f7c2799da7ebfa, type: 3}
@@ -332,6 +337,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.126, y: 0.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8574569241693333042}
   m_RootOrder: 2
@@ -363,6 +369,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.086, y: 0.684, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8574569242256279811}
   m_RootOrder: 0
@@ -378,6 +385,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -492,6 +500,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8574569242241008466}
   m_Father: {fileID: 8574569241693333042}
@@ -508,6 +517,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -574,6 +584,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8574569241693333042}
   m_RootOrder: 3
