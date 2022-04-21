@@ -1317,6 +1317,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1093042761 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1093042761, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
+  m_PrefabInstance: {fileID: 8574569241790820922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1127112587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1411,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1045040864391486571, guid: a6faea3ad7dc52c43b6af3898a944530, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045040864391486573, guid: a6faea3ad7dc52c43b6af3898a944530, type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2376,6 +2385,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1045040864391486573, guid: a6faea3ad7dc52c43b6af3898a944530, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6faea3ad7dc52c43b6af3898a944530, type: 3}
 --- !u!1001 &3743921717332585564
@@ -2442,6 +2455,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093042761, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574569241693333040, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
+      propertyPath: birdOffset
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574569241693333040, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
+      propertyPath: howManyBirds
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574569241693333040, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
+      propertyPath: birdSpawnPosition
+      value: 
+      objectReference: {fileID: 1093042761}
     - target: {fileID: 8574569241693333042, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
       propertyPath: m_RootOrder
       value: 4

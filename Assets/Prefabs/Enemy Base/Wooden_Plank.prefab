@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1045040864391486570}
   - component: {fileID: 1045040864391486573}
   - component: {fileID: -3878206839258001035}
+  - component: {fileID: 4406522054197444008}
   m_Layer: 0
   m_Name: Wooden_Plank
   m_TagString: Finish
@@ -146,3 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4083c6838c19b1478fbf887d7602372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodParticle: {fileID: 1643042326959981662, guid: ffef5bbb4f3b1114daff8d35a5acabb0, type: 3}
+--- !u!114 &4406522054197444008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045040864391486569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3777b9d85273a409d441721c52161d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1045040864391486573}
+  damageAmount: 1
+  minVelocityToDestroy: 1

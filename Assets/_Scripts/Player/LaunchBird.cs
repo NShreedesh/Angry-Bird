@@ -30,6 +30,9 @@ public class LaunchBird : MonoBehaviour
     [SerializeField] private int howManyTrajectoryPoints;
     [SerializeField] private Transform trajectoryPointsParent;
 
+    [Header("Bird Ready Info")]
+    [SerializeField] private int makeNextBirdReadyAfter = 1;
+
     private void Start()
     {
         _cam = Camera.main;
@@ -94,7 +97,7 @@ public class LaunchBird : MonoBehaviour
             ResetStrips();
             ResetValues();
 
-            Invoke(nameof(RespawnBird), 2);
+            Invoke(nameof(MakeNextBirdReady), makeNextBirdReadyAfter);
         }
     }
 
@@ -135,8 +138,13 @@ public class LaunchBird : MonoBehaviour
         return (Vector2)controller.bird.transform.position + (_dragForce * time) + (0.5f * time * time * Physics2D.gravity);
     }
 
-    private void RespawnBird()
+    private void MakeNextBirdReady()
     {
-        controller.SpawnBird();
+        controller.MakeBirdReady();
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

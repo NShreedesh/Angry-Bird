@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour, IDamagable
     [SerializeField] private Sprite[] damageSpites;
     [SerializeField] private int health;
 
+    [Header("Particle System Info")]
+    [SerializeField] private ParticleSystem enemyDeathParticle;
+
     private void Start()
     {
         health = damageSpites.Length;
@@ -26,6 +29,10 @@ public class Enemy : MonoBehaviour, IDamagable
 
     private void Die()
     {
+        ParticleSystem particle = Instantiate(enemyDeathParticle, transform.position, Quaternion.identity);
+        var main = particle.main;
+        main.startSize = 1;
+        particle.Play();
         Destroy(gameObject);
     }
 }

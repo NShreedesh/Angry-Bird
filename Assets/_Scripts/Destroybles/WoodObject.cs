@@ -3,10 +3,15 @@ using UnityEngine.Pool;
 
 public class WoodObject : MonoBehaviour, IDestroyable
 {
-    public void DestoryObject(ParticleSystem particleSystem)
+    [SerializeField] private ParticleSystem woodParticle;
+
+    public void DestoryObject()
     {
-        particleSystem.Stop();
-        particleSystem.Play();
+        GameObject particle = Instantiate(woodParticle.gameObject, transform.position, Quaternion.identity);
+        ParticleSystem particleSystemForWood = particle.GetComponent<ParticleSystem>();
+
+        particleSystemForWood.Stop();
+        particleSystemForWood.Play();
         Destroy(gameObject);
     }
 }

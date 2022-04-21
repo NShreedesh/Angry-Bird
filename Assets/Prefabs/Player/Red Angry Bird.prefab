@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1493189216}
   - component: {fileID: 8360647739492036963}
   - component: {fileID: 442356958}
+  - component: {fileID: 4749218755265121707}
   m_Layer: 6
   m_Name: Red Angry Bird
   m_TagString: Untagged
@@ -114,13 +115,25 @@ MonoBehaviour:
   isLaunched: 0
   rb: {fileID: 8360647739492036963}
   birdParticles: {fileID: 1237598573, guid: 95e08bd79cbeef244bef620efb095dcf, type: 3}
-  woodParticles: {fileID: 1643042326959981662, guid: ffef5bbb4f3b1114daff8d35a5acabb0, type: 3}
   smokeParticles:
-  - {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}
-  - {fileID: 813431642778764539, guid: 443c43a1a0bc46e4d91c01830b7faaa9, type: 3}
   - {fileID: 3565556259048454795, guid: 582f52882bfa22149b93158ec3a06e57, type: 3}
-  maxSmokeSize: 1
+  - {fileID: 813431642778764539, guid: 443c43a1a0bc46e4d91c01830b7faaa9, type: 3}
+  - {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}
+--- !u!114 &4749218755265121707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360647739492036958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3777b9d85273a409d441721c52161d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 8360647739492036963}
   damageAmount: 1
+  minVelocityToDestroy: 2
 --- !u!1 &8360647740061924646
 GameObject:
   m_ObjectHideFlags: 0
