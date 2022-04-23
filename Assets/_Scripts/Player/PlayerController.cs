@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int howManyBirds = 1;
     [SerializeField] private Transform birdSpawnPosition;
     [SerializeField] private float birdOffset;
-    [SerializeField] private List<Bird> birds = new List<Bird>();
+    [SerializeField] private List<Bird> birds = new();
 
     [Header("Bird Info")]
     public GameObject birdPrefab;
@@ -29,12 +29,12 @@ public class PlayerController : MonoBehaviour
     {
         for (int i = 0; i < howManyBirds; i++)
         {
-            GameObject bird = Instantiate(birdPrefab.gameObject, birdSpawnTransform.position, Quaternion.identity);
+            GameObject bird = Instantiate(birdPrefab, birdSpawnTransform.position, Quaternion.identity);
             bird.transform.position = birdSpawnPosition.position - new Vector3(birdOffset * (i+1), 0);
             bird.TryGetComponent<Bird>(out Bird currentBird);
 
             birds.Add(currentBird);
-            currentBird.isLaunched = true;
+            currentBird.canBeLaunched = false;
         }
 
         MakeBirdReady();
@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour
     {
         for(int i = 0; i < birds.Count; i++)
         {
-            if(birds[i].isLaunched == true)
+            if(birds[i].canBeLaunched == false)
             {
                 birds[i].transform.position = birdSpawnTransform.position;
-                birds[i].isLaunched = false;
+                birds[i].canBeLaunched = true;
                 birds.Remove(birds[i]);
                 return;
             }

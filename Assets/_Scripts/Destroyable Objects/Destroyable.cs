@@ -5,7 +5,6 @@ public class Destroyable : MonoBehaviour
     [Header("Particles Info")]
     [SerializeField] private ParticleSystem destroyParticle;
 
-
     [Header("Damage Info")]
     public int damageToEnemy = 1;
     public float damageVelocity = 3;

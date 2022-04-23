@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     [Header("Bird Info")]
+    public bool canBeLaunched;
     public bool isLaunched;
     [SerializeField] private Rigidbody2D rb;
 
@@ -22,22 +23,22 @@ public class Bird : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        BirdParticlesSpawn();
+        if (rb.velocity.magnitude > 1)
+        {
+            BirdParticlesSpawn();
+        }
     }
 
     private void BirdParticlesSpawn()
     {
-        if (rb.velocity.magnitude > 1)
-        {
-            GameObject birdParticle = Instantiate(birdParticles.gameObject, transform.position, Quaternion.identity);
-            ParticleSystem particlesSystemForBird = birdParticle.GetComponent<ParticleSystem>();
-            particlesSystemForBird.Stop();
-            particlesSystemForBird.Play();
+        GameObject birdParticle = Instantiate(birdParticles.gameObject, transform.position, Quaternion.identity);
+        ParticleSystem particlesSystemForBird = birdParticle.GetComponent<ParticleSystem>();
+        particlesSystemForBird.Stop();
+        particlesSystemForBird.Play();
 
-            GameObject smokeParticle = Instantiate(smokeParticles[Random.Range(0, smokeParticles.Length)].gameObject, transform.position, Quaternion.identity);
-            ParticleSystem particlesSystemForSmoke = smokeParticle.GetComponent<ParticleSystem>();
-            particlesSystemForSmoke.Stop();
-            particlesSystemForSmoke.Play();
-        }
+        GameObject smokeParticle = Instantiate(smokeParticles[Random.Range(0, smokeParticles.Length)].gameObject, transform.position, Quaternion.identity);
+        ParticleSystem particlesSystemForSmoke = smokeParticle.GetComponent<ParticleSystem>();
+        particlesSystemForSmoke.Stop();
+        particlesSystemForSmoke.Play();
     }
 }

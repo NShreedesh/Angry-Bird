@@ -65,6 +65,7 @@ public class LaunchBird : MonoBehaviour
                 hitInfo.transform.TryGetComponent<Bird>(out controller.bird);
                 if (controller.bird is null) return;
                 controller.rb = controller.bird.GetComponent<Rigidbody2D>();
+                if (!controller.bird.canBeLaunched) return;
                 if (controller.bird.isLaunched) return;
                 _dragStartPosition = hitInfo.transform.position;
                 _canLaunch = true;
@@ -93,6 +94,7 @@ public class LaunchBird : MonoBehaviour
             controller.rb.isKinematic = false;
             controller.rb.velocity = Vector2.zero;
             controller.rb.velocity = _dragForce;
+            controller.bird.canBeLaunched = false;
             controller.bird.isLaunched = true;
             ResetStrips();
             ResetValues();
