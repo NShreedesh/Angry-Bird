@@ -1,37 +1,62 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamagable
+public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Health Info")]
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite[] damageSpites;
+    [Header("Health Info")]
     [SerializeField] private int health;
 
-    [Header("Particle System Info")]
-    [SerializeField] private ParticleSystem enemyDeathParticle;
+    [Header("Damage Sprite Change Info")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite[] damageSprites;
+
+    [Header("Particles Info")]
+    [SerializeField] private ParticleSystem destroyParticle;
+
 
     private void Start()
     {
-        health = damageSpites.Length;
+        health = damageSprites.Length;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.TryGetComponent<Bird>(out Bird bird))
+        {
+            if (collision.relativeVelocity.magnitude < bird.damageVelocity) return;
+            Damage(bird.damageToEnemy);
+        }
+
+        if (collision.transform.TryGetComponent<Destroyable>(out Destroyable destroyable))
+        {
+            if (collision.relativeVelocity.magnitude < destroyable.damageVelocity) return;
+            Damage(destroyable.damageToEnemy);
+        }
+
+        if (collision.transform.TryGetComponent<Ground>(out Ground ground))
+        {
+            if (collision.relativeVelocity.magnitude < ground.damageVelocity) return;
+            Damage(ground.damageToEnemy);
+        }
     }
 
     public void Damage(int damageAmount)
     {
+        health -= damageAmount;
+
         if (health <= 0)
         {
+            health = 0;
             Die();
             return;
         }
 
-        health -=damageAmount;
-        spriteRenderer.sprite = damageSpites[damageSpites.Length - health - 1];
+        spriteRenderer.sprite = damageSprites[damageSprites.Length - health];
     }
 
-    private void Die()
+    public void Die()
     {
-        ParticleSystem particle = Instantiate(enemyDeathParticle, transform.position, Quaternion.identity);
-        var main = particle.main;
-        main.startSize = 1;
+        ParticleSystem particle = Instantiate(destroyParticle, transform.position, Quaternion.identity);
+        particle.Stop();
         particle.Play();
         Destroy(gameObject);
     }

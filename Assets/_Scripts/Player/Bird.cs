@@ -10,6 +10,10 @@ public class Bird : MonoBehaviour
     [SerializeField] private ParticleSystem birdParticles;
     [SerializeField] private ParticleSystem[] smokeParticles;
 
+    [Header("Damage Info")]
+    public int damageToEnemy = 1;
+    public float damageVelocity = 3;
+
     private void Start()
     {
         rb.isKinematic = true;

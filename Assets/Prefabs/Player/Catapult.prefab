@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093042760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -315,6 +315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputControls: {fileID: 8574569241693333041}
   howManyBirds: 3
+  birdSpawnPosition: {fileID: 1093042761}
+  birdOffset: 0.7
+  birds: []
   birdPrefab: {fileID: 8360647739492036958, guid: 99c2037cd7cd939439ebf3033b4da3a6, type: 3}
   birdSpawnTransform: {fileID: 8574569242047536721}
   bird: {fileID: 0}
@@ -344,6 +347,7 @@ MonoBehaviour:
   trajectoryPoint: {fileID: 4724225097156155813, guid: c2bd8a4574be32f4f9f7c2799da7ebfa, type: 3}
   howManyTrajectoryPoints: 40
   trajectoryPointsParent: {fileID: 8574569242528933449}
+  makeNextBirdReadyAfter: 1
 --- !u!1 &8574569242047536720
 GameObject:
   m_ObjectHideFlags: 0
