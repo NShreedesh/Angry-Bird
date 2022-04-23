@@ -121,9 +121,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0014062822, y: -0.05011207}
+  m_Offset: {x: -0.009213656, y: -0.060732096}
   serializedVersion: 2
-  m_Radius: 0.37683636
+  m_Radius: 0.41082034
 --- !u!114 &2896216375070044274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +142,5 @@ MonoBehaviour:
   - {fileID: 2135166998, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   - {fileID: -38155583, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   destroyParticle: {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}
+  damageToEnemy: 1
+  damageVelocity: 3

@@ -96,6 +96,7 @@ public class LaunchBird : MonoBehaviour
             controller.rb.velocity = _dragForce;
             controller.bird.canBeLaunched = false;
             controller.bird.isLaunched = true;
+
             ResetStrips();
             ResetValues();
 
@@ -142,6 +143,7 @@ public class LaunchBird : MonoBehaviour
 
     private void MakeNextBirdReady()
     {
+        controller.birds.RemoveAt(0);
         controller.MakeBirdReady();
     }
 

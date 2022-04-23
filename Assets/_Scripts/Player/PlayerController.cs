@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int howManyBirds = 1;
     [SerializeField] private Transform birdSpawnPosition;
     [SerializeField] private float birdOffset;
-    [SerializeField] private List<Bird> birds = new();
+    public List<Bird> birds = new();
 
     [Header("Bird Info")]
     public GameObject birdPrefab;
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour
             {
                 birds[i].transform.position = birdSpawnTransform.position;
                 birds[i].canBeLaunched = true;
-                birds.Remove(birds[i]);
                 return;
             }
         }

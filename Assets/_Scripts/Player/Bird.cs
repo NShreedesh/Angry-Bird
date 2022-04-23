@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bird : MonoBehaviour
+public class Bird : MonoBehaviour, IDamagable
 {
     [Header("Bird Info")]
     public bool canBeLaunched;
@@ -14,6 +14,8 @@ public class Bird : MonoBehaviour
     [Header("Damage Info")]
     public int damageToEnemy = 1;
     public float damageVelocity = 3;
+    public int DamageToEnemy { get { return damageToEnemy; } }
+    public float DamageVelocity { get { return damageVelocity; } }
 
     private void Start()
     {

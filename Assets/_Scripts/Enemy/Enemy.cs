@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamagable
 {
     [Header("Health Info")]
     [SerializeField] private int health;
@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     [Header("Damage Info")]
     public int damageToEnemy = 1;
     public float damageVelocity = 3;
-
+    public int DamageToEnemy { get { return damageToEnemy; } }
+    public float DamageVelocity { get { return damageVelocity; } }
 
     private void Start()
     {
@@ -24,38 +25,11 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.TryGetComponent<Bird>(out Bird bird))
+        if(collision.transform.TryGetComponent<IDamagable>(out IDamagable damagable))
         {
-            if (collision.relativeVelocity.magnitude < bird.damageVelocity) return;
-            Damage(bird.damageToEnemy);
-        }
+            if (collision.relativeVelocity.magnitude < damagable.DamageVelocity) return;
 
-        if (collision.transform.TryGetComponent<Destroyable>(out Destroyable destroyable))
-        {
-            if(collision.GetContact(0).normal.y < 0.5f)
-            {
-                //When Destroyables hits the enemy.
-                if (collision.relativeVelocity.magnitude < destroyable.damageVelocity) return;
-                Damage(destroyable.damageToEnemy);
-            }
-            else
-            {
-                //When Enemy Hits the destroyables.
-                if (collision.relativeVelocity.magnitude < (destroyable.damageVelocity + 2)) return;
-                Damage(destroyable.damageToEnemy);
-            }
-        }
-
-        if (collision.transform.TryGetComponent<Ground>(out Ground ground))
-        {
-            if (collision.relativeVelocity.magnitude < ground.damageVelocity) return;
-            Damage(ground.damageToEnemy);
-        }
-
-        if (collision.transform.TryGetComponent<Enemy>(out Enemy enemy))
-        {
-            if (collision.relativeVelocity.magnitude < enemy.damageVelocity) return;
-            Damage(enemy.damageToEnemy);
+            Damage(damagable.DamageToEnemy);
         }
     }
 
