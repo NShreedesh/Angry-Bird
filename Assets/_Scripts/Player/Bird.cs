@@ -17,10 +17,26 @@ public class Bird : MonoBehaviour, IDamagable
     public int DamageToEnemy { get { return damageToEnemy; } }
     public float DamageVelocity { get { return damageVelocity; } }
 
+    [Header("Bird Destory Info")]
+    [SerializeField] private bool isDestroyed;
+
     private void Start()
     {
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
+    }
+
+    private void Update()
+    {
+        if (!isLaunched) return;
+        if (isDestroyed) return;
+
+        if(rb.velocity.x == 0 && rb.velocity.y == 0)
+        {
+            BirdParticlesSpawn();
+            Destroy(gameObject);
+            isDestroyed = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -61,7 +61,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 8360647739492036958}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8022d184873bdf446a4a7f4d2950b246, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b33c16dbd3f45c479ab87bda4343305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeLaunched: 0
   isLaunched: 0
   rb: {fileID: 8360647739492036963}
   birdParticles: {fileID: 1237598573, guid: 95e08bd79cbeef244bef620efb095dcf, type: 3}
@@ -118,9 +119,9 @@ MonoBehaviour:
   - {fileID: 3565556259048454795, guid: 582f52882bfa22149b93158ec3a06e57, type: 3}
   - {fileID: 813431642778764539, guid: 443c43a1a0bc46e4d91c01830b7faaa9, type: 3}
   - {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}
-  damageAmountForEnemy: 1
-  damageAmountForWood: 1
-  damageVelocity: 3
+  damageToEnemy: 1
+  damageVelocity: 2
+  isDestroyed: 0
 --- !u!1 &8360647740061924646
 GameObject:
   m_ObjectHideFlags: 0
