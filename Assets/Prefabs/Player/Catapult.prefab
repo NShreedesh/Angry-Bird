@@ -314,12 +314,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControls: {fileID: 8574569241693333041}
-  howManyBirds: 1
-  birdSpawnPosition: {fileID: 1093042761}
+  howManyBirds: 2
+  birdSpawnTransform: {fileID: 1093042761}
   birdOffset: 0.7
   birds: []
   birdPrefab: {fileID: 8360647739492036958, guid: 99c2037cd7cd939439ebf3033b4da3a6, type: 3}
-  birdSpawnTransform: {fileID: 8574569242047536721}
+  birdLaunchTransform: {fileID: 8574569242047536721}
   bird: {fileID: 0}
   rb: {fileID: 0}
 --- !u!114 &8574569241693333043
@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8574569242047536721}
   m_Layer: 0
-  m_Name: Bird Spawn Position
+  m_Name: Bird Launch Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

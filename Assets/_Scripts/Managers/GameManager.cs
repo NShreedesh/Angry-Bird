@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
                 OnVictory();
                 break;
             case GameState.Lose:
+                OnLose();
                 break;
         }
 
@@ -54,6 +55,11 @@ public class GameManager : MonoBehaviour
     private void OnVictory()
     {
         print("Victory");
+    }
+
+    private void OnLose()
+    {
+        print("Lose");
     }
 
     public enum GameState
