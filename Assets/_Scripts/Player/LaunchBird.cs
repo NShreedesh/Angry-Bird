@@ -50,6 +50,8 @@ public class LaunchBird : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.state != GameManager.GameState.Play) return;
+
         Launch();
     }
 
