@@ -7,6 +7,7 @@ public class TrackEnemyCount : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.state == GameManager.GameState.Pause) return;
         if (GameManager.Instance.state == GameManager.GameState.Victory) return;
 
         enemyCount = enemiesParentTransform.childCount;

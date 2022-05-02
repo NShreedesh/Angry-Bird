@@ -9,6 +9,7 @@ public class TrackPlayerCount : MonoBehaviour
     {
         if (GameManager.Instance.state == GameManager.GameState.Victory) return;
         if (GameManager.Instance.state == GameManager.GameState.Lose) return;
+        if (GameManager.Instance.state == GameManager.GameState.Pause) return;
 
         playerCount = playerParentTransform.childCount;
 

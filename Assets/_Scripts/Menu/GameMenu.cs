@@ -1,0 +1,88 @@
+using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class GameMenu : MonoBehaviour
+{
+    [Header("Buttons Info")]
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button pauseButton;
+    [SerializeField] private Button[] restartButton;
+    [SerializeField] private Button nextButton;
+
+    [Header("Panels Info")]
+    [SerializeField] private GameObject frontUIPanel;
+    [SerializeField] private GameObject backUIPanel;
+
+    [Header("Animation Info")]
+    [SerializeField] private Animator frontUIPanelAnimator;
+    private readonly string slideInAnimation = "slideIn";
+    private readonly string slideOutAnimation = "slideOut";
+
+    [Header("Game Over UI Info")]
+    [SerializeField] private GameObject gameOverUIPanel;
+
+    private void Start()
+    {
+        gameOverUIPanel.SetActive(false);
+
+        playButton.onClick.AddListener(() =>
+        {
+            PlayGame();
+        });
+        pauseButton.onClick.AddListener(() =>
+        {
+            PauseGame();
+        });
+        foreach(var restartButton in restartButton)
+        {
+            restartButton.onClick.AddListener(() =>
+            {
+                RestartGame();
+            });
+        }
+        nextButton.onClick.AddListener(() =>
+        {
+            NextLevel();
+        });
+
+        GameManager.OnVictoryState += GameOver;
+        GameManager.OnLoseState += GameOver;
+    }
+
+    private void PlayGame()
+    {
+        GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
+        pauseButton.interactable = true;
+        frontUIPanelAnimator.SetTrigger(slideOutAnimation);
+    }
+
+    private void PauseGame()
+    {
+        GameManager.Instance.UpdateGameState(GameManager.GameState.Pause);
+        pauseButton.interactable = false;
+        frontUIPanelAnimator.SetTrigger(slideInAnimation);
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void NextLevel()
+    {
+
+    }
+
+    private void GameOver()
+    {
+        gameOverUIPanel.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnVictoryState -= GameOver;
+        GameManager.OnLoseState -= GameOver;
+    }
+}

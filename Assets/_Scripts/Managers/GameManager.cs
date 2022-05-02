@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Instance Info")]
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
-    public static event Action<GameState> OnGameStateChanged;
-
+    [Header("State Info")]
     public GameState state;
+    public static event Action<GameState> OnGameStateChanged;
+    public static event Action OnVictoryState;
+    public static event Action OnLoseState;
 
     private void Awake()
     {
@@ -38,8 +41,10 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 break;
             case GameState.Play:
+                OnPlay();
                 break;
             case GameState.Pause:
+                OnPause();
                 break;
             case GameState.Victory:
                 OnVictory();
@@ -52,14 +57,26 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    private void OnPlay()
+    {
+        Time.timeScale = 1;
+    }
+
+    private void OnPause()
+    {
+        Time.timeScale = 0;
+    }
+
     private void OnVictory()
     {
         print("Victory");
+        OnVictoryState?.Invoke();
     }
 
     private void OnLose()
     {
         print("Lose");
+        OnLoseState?.Invoke();
     }
 
     public enum GameState
