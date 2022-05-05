@@ -72,11 +72,21 @@ public class GameMenu : MonoBehaviour
 
     private void NextLevel()
     {
-
+        GameManager.Instance.gameLevel++;
+        SaveManager.Save(GameManager.Instance.gameLevel);
+        RestartGame();
     }
 
     private void GameOver()
     {
+        if(GameManager.Instance.state == GameManager.GameState.Lose)
+        {
+            nextButton.interactable = false;
+        }
+        else if(GameManager.Instance.state == GameManager.GameState.Victory)
+        {
+            nextButton.interactable = true;
+        }
         gameOverUIPanel.SetActive(true);
     }
 

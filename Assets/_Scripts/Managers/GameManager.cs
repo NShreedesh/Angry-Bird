@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public static GameManager Instance { get { return instance; } }
 
+    [Header("Level Info")]
+    [Min(1)]
+    public int gameLevel = 1;
+
     [Header("State Info")]
     public GameState state;
     public static event Action<GameState> OnGameStateChanged;
@@ -23,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameLevel = SaveManager.Load();
+
         if(SystemInfo.deviceType == DeviceType.Handheld)
         {
             QualitySettings.vSyncCount = 0;
@@ -69,13 +75,11 @@ public class GameManager : MonoBehaviour
 
     private void OnVictory()
     {
-        print("Victory");
         OnVictoryState?.Invoke();
     }
 
     private void OnLose()
     {
-        print("Lose");
         OnLoseState?.Invoke();
     }
 

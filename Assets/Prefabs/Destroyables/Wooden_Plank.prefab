@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1045040864391486573}
-  enemyHitVelocity: 0.5
+  enemyHitVelocity: 0.6
   damageAmount: 1
   health: 0
   woodParticle: {fileID: 1643042326959981662, guid: ffef5bbb4f3b1114daff8d35a5acabb0, type: 3}
