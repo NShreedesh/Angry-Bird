@@ -1,34 +1,38 @@
 using UnityEngine;
 
-public class Destroyable : MonoBehaviour, IDamagable
+public class Destroyable : MonoBehaviour, IDestroyable
 {
-    [Header("Particles Info")]
-    [SerializeField] private ParticleSystem destroyParticle;
+    [Header("Components")]
+    [SerializeField] private Rigidbody2D rb;
 
-    [Header("Damage Info")]
-    public int damageToEnemy = 1;
-    public float damageVelocity = 1;
-    public int DamageToEnemy { get { return damageToEnemy; } }
-    public float DamageVelocity { get { return damageVelocity; } }
+    [Header("Enemy Hit Info")]
+    [SerializeField] private float enemyHitVelocity = 2;
+    [SerializeField] private int damageAmount = 1;
+
+    [Header("Destroy Info")]
+    [SerializeField] private int health;
+    public int Health => health;
+    [SerializeField] private ParticleSystem woodParticle;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ContactPoint2D collisionFirstContact;
+        EnemyHit(collision);
+    }
 
-        if (collision.transform.TryGetComponent<Bird>(out Bird bird))
+    private void EnemyHit(Collision2D collision)
+    {
+        if (!collision.transform.TryGetComponent<IDamagable>(out IDamagable damagable)) return;
+        if (!collision.transform.TryGetComponent<Rigidbody2D>(out Rigidbody2D enemyRb)) return;
+
+        if (rb.velocity.magnitude >= enemyHitVelocity || enemyRb.velocity.magnitude >= enemyHitVelocity)
         {
-            collisionFirstContact = collision.GetContact(0);
-
-            if (collision.relativeVelocity.magnitude < bird.damageVelocity) return;
-            if (collisionFirstContact.normal.y > 0.4f) return;
-            DestroyObject();
+            damagable.Damage(damageAmount);
         }
     }
 
-    public void DestroyObject()
+    public void Destroy()
     {
-        ParticleSystem particle = Instantiate(destroyParticle, transform.position, Quaternion.identity);
-        particle.Stop();
+        ParticleSystem particle = Instantiate(woodParticle, transform.position, Quaternion.identity);
         particle.Play();
         Destroy(gameObject);
     }

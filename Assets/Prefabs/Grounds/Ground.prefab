@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a728e667326865a4c8d015b832de7760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToEnemy: 2
-  damageVelocity: 1
+  enemyHitVelocity: 0.8
+  damageAmount: 2

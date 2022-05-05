@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66115fc309335cc4f9f58e051afe832f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyParticle: {fileID: 1643042326959981662, guid: ffef5bbb4f3b1114daff8d35a5acabb0, type: 3}
-  damageToEnemy: 1
-  damageVelocity: 1
+  rb: {fileID: 1045040864391486573}
+  enemyHitVelocity: 0.5
+  damageAmount: 1
+  health: 0
+  woodParticle: {fileID: 1643042326959981662, guid: ffef5bbb4f3b1114daff8d35a5acabb0, type: 3}

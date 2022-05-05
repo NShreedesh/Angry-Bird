@@ -119,9 +119,11 @@ MonoBehaviour:
   - {fileID: 3565556259048454795, guid: 582f52882bfa22149b93158ec3a06e57, type: 3}
   - {fileID: 813431642778764539, guid: 443c43a1a0bc46e4d91c01830b7faaa9, type: 3}
   - {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}
-  damageToEnemy: 1
-  damageVelocity: 2
+  birdParticlesVelocity: 1
   isDestroyed: 0
+  enemyHitVelocity: 1.4
+  damageAmount: 1
+  destroyableHitVelocity: 1
 --- !u!1 &8360647740061924646
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 ﻿public interface IDamagable
 {
-    public int DamageToEnemy { get; }
-    public float DamageVelocity { get; }
+    public int Health { get; }
+    public void Damage(int damageAmount);
 }
