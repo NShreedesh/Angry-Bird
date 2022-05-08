@@ -126,3 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHitVelocity: 0.8
   damageAmount: 2
+  destroyableHitVelocity: 1

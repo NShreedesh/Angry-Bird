@@ -82,9 +82,8 @@ public class Bird : MonoBehaviour
 
     private void DestroyableHit(Collision2D collision)
     {
-        if (collision.transform.TryGetComponent<IDestroyable>(out IDestroyable destroyable))
-        {
-            destroyable.Destroy();
-        }
+        if (!collision.transform.TryGetComponent<IDestroyable>(out IDestroyable destroyable)) return;
+
+        destroyable.Destroy();
     }
 }

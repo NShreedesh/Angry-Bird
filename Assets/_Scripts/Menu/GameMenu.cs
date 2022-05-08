@@ -67,6 +67,7 @@ public class GameMenu : MonoBehaviour
 
     private void RestartGame()
     {
+        GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -74,6 +75,7 @@ public class GameMenu : MonoBehaviour
     {
         GameManager.Instance.gameLevel++;
         SaveManager.Save(GameManager.Instance.gameLevel);
+        GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
         RestartGame();
     }
 

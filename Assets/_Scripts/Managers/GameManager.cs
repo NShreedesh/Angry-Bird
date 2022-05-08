@@ -20,22 +20,21 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if(instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
             instance = this;
+        }
         else
             Destroy(this);
     }
 
     private void Start()
     {
-        gameLevel = SaveManager.Load();
-
         if(SystemInfo.deviceType == DeviceType.Handheld)
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 61;
         }
-
-        UpdateGameState(GameState.Play);
     }
 
     public void UpdateGameState(GameState newState)
