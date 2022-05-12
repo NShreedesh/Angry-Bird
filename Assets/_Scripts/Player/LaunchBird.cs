@@ -94,10 +94,10 @@ public class LaunchBird : MonoBehaviour
         else if (controller.inputControls.leftMouseInput <= 0 && _canLaunch)
         {
             controller.rb.isKinematic = false;
-            controller.rb.velocity = Vector2.zero;
             controller.rb.velocity = _dragForce;
             controller.bird.canBeLaunched = false;
             controller.bird.isLaunched = true;
+            controller.bird.transform.parent = null;
 
             ResetStrips();
             ResetValues();

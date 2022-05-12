@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -30,6 +31,6 @@ public class LevelSelection : MonoBehaviour
         GameManager.Instance.gameLevel = levelNumber;
         GameManager.Instance.UpdateGameState(GameManager.GameState.Play);
         await Task.Delay(300);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 }

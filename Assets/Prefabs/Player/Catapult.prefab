@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8574569241693333040}
-  force: 8
+  force: 7
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -345,7 +345,7 @@ MonoBehaviour:
   frontStripLineRenderer: {fileID: 8574569241592185474}
   backStripLineRenderer: {fileID: 8574569242241008467}
   trajectoryPoint: {fileID: 4724225097156155813, guid: c2bd8a4574be32f4f9f7c2799da7ebfa, type: 3}
-  howManyTrajectoryPoints: 40
+  howManyTrajectoryPoints: 0
   trajectoryPointsParent: {fileID: 8574569242528933449}
   makeNextBirdReadyAfter: 1
 --- !u!1 &8574569242047536720

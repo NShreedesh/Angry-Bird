@@ -9,18 +9,16 @@ public class EnemyArea : MonoBehaviour
     {
         TrackEnemyCount.OnEnemyTrack += EnemyCount;
 
-        int levelNumber = GameManager.Instance.gameLevel - 1; 
-        if (levelNumber >= enemyBaseList.Length - 1)
+        int levelNumber = GameManager.Instance.gameLevel; 
+        if (levelNumber >= enemyBaseList.Length)
         {
-            print("All Level Completed (Clear Player Prefs To Restart...)");
-            levelNumber = enemyBaseList.Length - 1;
+            levelNumber = enemyBaseList.Length;
             GameManager.Instance.gameLevel = levelNumber;
             SaveManager.Save(levelNumber);
-            print(levelNumber);
         }
 
-        GameObject enemyBase = Instantiate(enemyBaseList[levelNumber], transform);
-        enemyBase.transform.localPosition = enemyBaseList[levelNumber].transform.position;
+        GameObject enemyBase = Instantiate(enemyBaseList[levelNumber - 1], transform);
+        enemyBase.transform.localPosition = enemyBaseList[levelNumber - 1].transform.position;
     }
 
     private Transform EnemyCount()
