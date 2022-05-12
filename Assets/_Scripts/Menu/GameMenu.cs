@@ -10,6 +10,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button[] restartButton;
     [SerializeField] private Button nextButton;
+    [SerializeField] private Button menuButton;
 
     [Header("Panels Info")]
     [SerializeField] private GameObject frontUIPanel;
@@ -45,6 +46,10 @@ public class GameMenu : MonoBehaviour
         nextButton.onClick.AddListener(() =>
         {
             NextLevel();
+        });
+        menuButton.onClick.AddListener(() =>
+        {
+            GotoMenu();
         });
 
         GameManager.OnVictoryState += GameOver;
@@ -90,6 +95,11 @@ public class GameMenu : MonoBehaviour
             nextButton.interactable = true;
         }
         gameOverUIPanel.SetActive(true);
+    }
+
+    private void GotoMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void OnDisable()

@@ -376,7 +376,7 @@ TextureImporter:
         width: 70
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,7 +397,7 @@ TextureImporter:
         width: 101
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -405,6 +405,27 @@ TextureImporter:
       bones: []
       spriteID: afb557cce4f8d9f4ca8808aea26f78f8
       internalID: -553264694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptyButton
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 571
+        width: 99
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711a2d9e35582e24094937ffe9bc5015
+      internalID: -1805957386
       vertices: []
       indices: 
       edges: []
@@ -428,6 +449,7 @@ TextureImporter:
       Wrong: -1042825597
       What: 829326761
       Next: 1528276794
+      EmptyButton: -1805957386
       SoundOff: 1674889782
       Restart: 1367288014
       Correct: -620957814

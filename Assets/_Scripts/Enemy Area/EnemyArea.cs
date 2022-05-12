@@ -10,12 +10,13 @@ public class EnemyArea : MonoBehaviour
         TrackEnemyCount.OnEnemyTrack += EnemyCount;
 
         int levelNumber = GameManager.Instance.gameLevel - 1; 
-        if (levelNumber >= enemyBaseList.Length)
+        if (levelNumber >= enemyBaseList.Length - 1)
         {
             print("All Level Completed (Clear Player Prefs To Restart...)");
             levelNumber = enemyBaseList.Length - 1;
             GameManager.Instance.gameLevel = levelNumber;
             SaveManager.Save(levelNumber);
+            print(levelNumber);
         }
 
         GameObject enemyBase = Instantiate(enemyBaseList[levelNumber], transform);

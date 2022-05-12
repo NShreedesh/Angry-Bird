@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.Menu:
+                OnMenu();
                 break;
             case GameState.Play:
                 OnPlay();
@@ -60,6 +61,11 @@ public class GameManager : MonoBehaviour
         }
 
         OnGameStateChanged?.Invoke(newState);
+    }
+
+    private void OnMenu()
+    {
+        
     }
 
     private void OnPlay()
