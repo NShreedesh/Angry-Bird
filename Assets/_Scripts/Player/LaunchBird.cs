@@ -1,4 +1,3 @@
-using Cinemachine;
 using UnityEngine;
 
 public class LaunchBird : MonoBehaviour
@@ -40,14 +39,13 @@ public class LaunchBird : MonoBehaviour
         _cam = Camera.main;
 
         ResetStrips();
-        _trajectoryPoints = new GameObject[howManyTrajectoryPoints];
 
-        trajectoryPointsParent.gameObject.SetActive(false);
-
-        for (int i = 0; i < howManyTrajectoryPoints; i++)
-        {
-            _trajectoryPoints[i] = Instantiate(trajectoryPoint, transform.position, Quaternion.identity, trajectoryPointsParent);
-        }
+        //_trajectoryPoints = new GameObject[howManyTrajectoryPoints];
+        //trajectoryPointsParent.gameObject.SetActive(false);
+        //for (int i = 0; i < howManyTrajectoryPoints; i++)
+        //{
+        //    _trajectoryPoints[i] = Instantiate(trajectoryPoint, transform.position, Quaternion.identity, trajectoryPointsParent);
+        //}
     }
 
     private void Update()
@@ -85,12 +83,6 @@ public class LaunchBird : MonoBehaviour
             _dragForce = (_dragEndPosition - _dragStartPosition) * -force;
 
             SetStrips(_dragEndPosition);
-
-            for (int i = 0; i < howManyTrajectoryPoints; i++)
-            {
-                _trajectoryPoints[i].transform.position = CalculateTrajectoryPosition(i * 0.05f);
-            }
-
         }
 
         else if (controller.inputControls.leftMouseInput <= 0 && _canLaunch)
@@ -156,7 +148,6 @@ public class LaunchBird : MonoBehaviour
     {
         controller.birds.RemoveAt(0);
         controller.MakeBirdReady();
-
     }
 
     private void OnDisable()

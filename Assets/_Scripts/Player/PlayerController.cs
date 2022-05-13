@@ -30,10 +30,11 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < howManyBirds; i++)
         {
             GameObject bird = Instantiate(birdPrefab, birdLaunchTransform.position, Quaternion.identity, birdSpawnTransform);
-            bird.transform.position = birdSpawnTransform.position - new Vector3(birdOffset * (i+1), 0);
+            bird.GetComponent<Rigidbody2D>().MovePosition(birdSpawnTransform.position - new Vector3(birdOffset * (i + 1), 0));
             bird.TryGetComponent<Bird>(out Bird currentBird);
 
             birds.Add(currentBird);
+
             currentBird.canBeLaunched = false;
         }
 
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             if(birds[i].canBeLaunched == false)
             {
-                birds[i].transform.position = birdLaunchTransform.position;
+                birds[i].GetComponent<Rigidbody2D>().MovePosition(birdLaunchTransform.position);
                 birds[i].canBeLaunched = true;
                 return;
             }

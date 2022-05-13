@@ -22,7 +22,7 @@ public class Bird : MonoBehaviour
     [Header("Destroyable Hit Info")]
     [SerializeField] private float destroyableHitVelocity = 2;
 
-    private void Start()
+    private void Awake()
     {
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
@@ -33,7 +33,7 @@ public class Bird : MonoBehaviour
         if (!isLaunched) return;
         if (isDestroyed) return;
 
-        if(rb.velocity.x == 0 && rb.velocity.y == 0)
+        if (rb.velocity.x == 0 && rb.velocity.y == 0)
         {
             BirdParticlesSpawn();
             Destroy(gameObject);

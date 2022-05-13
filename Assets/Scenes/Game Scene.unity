@@ -2759,10 +2759,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8574569241693333040, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
-      propertyPath: cinemachineCam
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8574569241693333042, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2806,18 +2802,6 @@ PrefabInstance:
     - target: {fileID: 8574569241693333042, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574569241693333043, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
-      propertyPath: targetGroup
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574569241693333043, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
-      propertyPath: cinemachineCam
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574569241693333043, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
-      propertyPath: makeNextBirdReadyAfter
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8574569241693333053, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
       propertyPath: m_Name

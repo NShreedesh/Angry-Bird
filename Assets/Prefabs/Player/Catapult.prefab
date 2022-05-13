@@ -348,7 +348,7 @@ MonoBehaviour:
   trajectoryPoint: {fileID: 4724225097156155813, guid: c2bd8a4574be32f4f9f7c2799da7ebfa, type: 3}
   howManyTrajectoryPoints: 0
   trajectoryPointsParent: {fileID: 8574569242528933449}
-  makeNextBirdReadyAfter: 1
+  makeNextBirdReadyAfter: 2
 --- !u!1 &8574569242047536720
 GameObject:
   m_ObjectHideFlags: 0
