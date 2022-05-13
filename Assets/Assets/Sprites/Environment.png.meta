@@ -144,12 +144,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 53
-        y: 267
+        y: 269
         width: 481
-        height: 297
+        height: 295
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 150, z: 0, w: 144}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -203,55 +203,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass2
-      rect:
-        serializedVersion: 2
-        x: 1414
-        y: 255
-        width: 344
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39369acfa9023ec70800000000000000
-      internalID: 8999072330452394899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass3
-      rect:
-        serializedVersion: 2
-        x: 1793
-        y: 255
-        width: 336
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 959bd7c55af624110800000000000000
-      internalID: 1243679203119708505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Trees
+      name: Tree
       rect:
         serializedVersion: 2
         x: 2166
-        y: 255
+        y: 264
         width: 491
-        height: 221
+        height: 212
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,48 +219,6 @@ TextureImporter:
       bones: []
       spriteID: 9043ef023db191650800000000000000
       internalID: 6204020555285148681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tree
-      rect:
-        serializedVersion: 2
-        x: 2676
-        y: 255
-        width: 484
-        height: 205
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf324a99ca7b29940800000000000000
-      internalID: 5301501663308424188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soil
-      rect:
-        serializedVersion: 2
-        x: 3207
-        y: 253
-        width: 258
-        height: 259
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4890de15a95908fc0800000000000000
-      internalID: -3494628820807513724
       vertices: []
       indices: 
       edges: []
@@ -318,9 +234,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tree: 5301501663308424188
+      Tree: 6204020555285148681
       Grass1: -8611688589887310195
-      Trees: 6204020555285148681
       Grass3: 1243679203119708505
       Sky: 1690984027091663774
       Ground: -250596111783113037

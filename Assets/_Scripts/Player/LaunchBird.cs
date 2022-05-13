@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class LaunchBird : MonoBehaviour
@@ -19,6 +20,7 @@ public class LaunchBird : MonoBehaviour
     private Vector2 _dragStartPosition;
     private Vector2 _dragEndPosition;
     private Vector2 _dragForce;
+    [SerializeField] private float minDragDistance;
 
     [Header("Catapult Stips Info")]
     [SerializeField] private LineRenderer frontStripLineRenderer;
@@ -93,14 +95,24 @@ public class LaunchBird : MonoBehaviour
 
         else if (controller.inputControls.leftMouseInput <= 0 && _canLaunch)
         {
+            float dragDistance = (_dragEndPosition - _dragStartPosition).magnitude;
+
+            ResetStrips();
+            ResetValues();
+
+            if (dragDistance <= minDragDistance)
+            {
+                controller.bird.transform.position = controller.birdLaunchTransform.position;
+                controller.bird = null;
+                controller.rb = null;
+                return;
+            }
+
             controller.rb.isKinematic = false;
             controller.rb.velocity = _dragForce;
             controller.bird.canBeLaunched = false;
             controller.bird.isLaunched = true;
             controller.bird.transform.parent = null;
-
-            ResetStrips();
-            ResetValues();
 
             Invoke(nameof(MakeNextBirdReady), makeNextBirdReadyAfter);
         }
@@ -132,9 +144,6 @@ public class LaunchBird : MonoBehaviour
 
     private void ResetValues()
     {
-        _dragStartPosition = Vector2.zero;
-        _dragEndPosition = Vector2.zero;
-        _dragForce = Vector2.zero;
         _canLaunch = false;
     }
 
@@ -147,6 +156,7 @@ public class LaunchBird : MonoBehaviour
     {
         controller.birds.RemoveAt(0);
         controller.MakeBirdReady();
+
     }
 
     private void OnDisable()
