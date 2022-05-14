@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject birdPrefab;
     public Transform birdLaunchTransform;
     public Bird bird;
+    public BirdAbility previousBirdAbility;
 
     [Header("Physics Info")]
     public Rigidbody2D rb;

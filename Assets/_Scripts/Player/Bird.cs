@@ -13,7 +13,7 @@ public class Bird : MonoBehaviour
     [SerializeField] private float birdParticlesVelocity = 1;
 
     [Header("Bird Destory Info")]
-    [SerializeField] private bool isDestroyed;
+    public bool isDestroyed;
 
     [Header("Enemy Hit Info")]
     [SerializeField] private float enemyHitVelocity = 2;

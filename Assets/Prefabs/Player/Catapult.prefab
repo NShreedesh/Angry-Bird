@@ -318,9 +318,10 @@ MonoBehaviour:
   birdSpawnTransform: {fileID: 1093042761}
   birdOffset: 0.7
   birds: []
-  birdPrefab: {fileID: 8360647739492036958, guid: 99c2037cd7cd939439ebf3033b4da3a6, type: 3}
+  birdPrefab: {fileID: 1532888669418104066, guid: ba8f5093be7bfb94ea57b766bf476002, type: 3}
   birdLaunchTransform: {fileID: 8574569242047536721}
   bird: {fileID: 0}
+  previousBirdAbility: {fileID: 0}
   rb: {fileID: 0}
 --- !u!114 &8574569241693333043
 MonoBehaviour:
@@ -348,7 +349,7 @@ MonoBehaviour:
   trajectoryPoint: {fileID: 4724225097156155813, guid: c2bd8a4574be32f4f9f7c2799da7ebfa, type: 3}
   howManyTrajectoryPoints: 0
   trajectoryPointsParent: {fileID: 8574569242528933449}
-  makeNextBirdReadyAfter: 2
+  makeNextBirdReadyAfter: 1
 --- !u!1 &8574569242047536720
 GameObject:
   m_ObjectHideFlags: 0

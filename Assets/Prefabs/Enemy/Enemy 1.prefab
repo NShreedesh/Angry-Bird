@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -125,7 +125,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0101182, y: 0.96999997}
+    oldSize: {x: 1.01, y: 0.97}
     newSize: {x: 1.01, y: 0.97}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -171,6 +171,6 @@ MonoBehaviour:
   health: 2
   spriteRenderer: {fileID: 3743921716752626115}
   damageSprites:
-  - {fileID: 2135166998, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   - {fileID: -38155583, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
+  - {fileID: 967780284, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   enemyDestroyParticle: {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}

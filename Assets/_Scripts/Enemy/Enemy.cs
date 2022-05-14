@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamagable
@@ -24,11 +23,12 @@ public class Enemy : MonoBehaviour, IDamagable
         if (health <= 0)
         {
             health = 0;
-            Die();
+            spriteRenderer.sprite = damageSprites[damageSprites.Length - health - 1];
+            Invoke(nameof(Die), 0.3f);
         }
         else
         {
-            spriteRenderer.sprite = damageSprites[damageSprites.Length - health];
+            spriteRenderer.sprite = damageSprites[damageSprites.Length - health - 1];
         }
     }
 
@@ -37,5 +37,10 @@ public class Enemy : MonoBehaviour, IDamagable
         ParticleSystem particle = Instantiate(enemyDestroyParticle, transform.position, Quaternion.identity);
         particle.Play();
         Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

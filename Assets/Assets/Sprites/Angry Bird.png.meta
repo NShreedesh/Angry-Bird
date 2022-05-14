@@ -233,90 +233,6 @@ TextureImporter:
       name: Simple Enemy_2
       rect:
         serializedVersion: 2
-        x: 296
-        y: 414
-        width: 101
-        height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 489bceec1ba711941a4b597c84795e3c
-      internalID: -1933043288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Enemy_3
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 316
-        width: 101
-        height: 97
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abd46ae66da1b644e9307fde1887098f
-      internalID: -920596541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Enemy_4
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 217
-        width: 101
-        height: 95
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73c35ebad47387640bbd72630f50dc5c
-      internalID: 2135166998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Enemy_5
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 25
-        width: 101
-        height: 94
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c8d183a59923554ba9966769f12dc6a
-      internalID: 714045683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Enemy_8
-      rect:
-        serializedVersion: 2
         x: 611
         y: 616
         width: 97
@@ -335,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Simple Enemy_9
+      name: Simple Enemy_3
       rect:
         serializedVersion: 2
         x: 712
@@ -351,48 +267,6 @@ TextureImporter:
       bones: []
       spriteID: 19f7a09200b62f943bc526c7e3e7f6bd
       internalID: 967780284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Enemy_6
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 619
-        width: 97
-        height: 91
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a85ee579f160b31448233cbe7d3e73cb
-      internalID: 242713358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Simple Enemy_7
-      rect:
-        serializedVersion: 2
-        x: 510
-        y: 618
-        width: 98
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 909cd12bd2a3f9b4eb7d7632160ea8b9
-      internalID: -1527150097
       vertices: []
       indices: 
       edges: []
@@ -586,6 +460,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Triangle Angry Bird 1
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 34
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0eccc1f1985a041948a3351821dbaa
+      internalID: -1264523514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle Angry Bird 2
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 172
+        width: 69
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94daaa4994149744f819e9407774763b
+      internalID: -970554608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle Angry Bird 3
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 170
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2a341a15a29464a88e8e1e31d82768
+      internalID: 901827053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleBird_Wing 1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 501
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c19e54d52d74314184be77699931806
+      internalID: 1884035957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TriangleBird_Wing 2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 496
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5418f15fc641ae54dbc9a51545b72d77
+      internalID: -29325456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -598,7 +577,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Glass 3: 662952777
-      Simple Enemy_9: 967780284
       Smoke2: -2062977273
       Catapault_Front: -8614203258021995029
       Dot1: 751035052
@@ -607,7 +585,7 @@ TextureImporter:
       Smoke3: 1659870014
       Catapault_Back: 3880404249073630250
       Glass 5: -1621092681
-      Simple Enemy_2: -1933043288
+      Simple Enemy_2: -38155583
       Glass 4: -548437814
       Simple Enemy_4: 2135166998
       Simple Enemy_7: -1527150097
@@ -615,12 +593,16 @@ TextureImporter:
       RedBird_Wing 1: 1132393151
       Simple Enemy_1: -1258499740
       Smoke1: -1632786127
+      Triangle Angry Bird 1: -1264523514
       Wood2: 363946975
       Glass 2: 1699729970
-      Simple Enemy_8: -38155583
+      TriangleBird_Wing 2: -29325456
+      Triangle Angry Bird 2: -970554608
+      TriangleBird_Wing 1: 1884035957
       Glass 6: -1450595134
       Simple Enemy_5: 745053716
-      Simple Enemy_3: -920596541
+      Simple Enemy_3: 967780284
+      Triangle Angry Bird 3: 901827053
       RedBird_Wing 2: -1886175083
       Glass 1: -1255232131
       wood1: 207926600

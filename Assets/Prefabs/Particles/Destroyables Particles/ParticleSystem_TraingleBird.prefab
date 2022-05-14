@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1237598573}
   - component: {fileID: 1237598572}
   m_Layer: 0
-  m_Name: ParticleSystem_RedBird
+  m_Name: ParticleSystem_TraingleBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
+      scalar: 1.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -977,7 +977,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 4
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1540,8 +1540,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 1132393151, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
-    - sprite: {fileID: -1886175083, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
+    - sprite: {fileID: 1884035957, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
+    - sprite: {fileID: -29325456, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

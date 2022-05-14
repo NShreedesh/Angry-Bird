@@ -13,7 +13,7 @@ public class InputControls : MonoBehaviour
     private void OnEnable()
     {
         inputActions = new InputActions();
-        inputActions.Enable();
+        inputActions.Player.Enable();
 
         inputActions.Player.LeftMouse.started += ctx => leftMouseInput = ctx.ReadValue<float>();
         inputActions.Player.LeftMouse.performed += ctx => leftMouseInput = ctx.ReadValue<float>();

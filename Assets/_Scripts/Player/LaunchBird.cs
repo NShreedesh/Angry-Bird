@@ -37,8 +37,8 @@ public class LaunchBird : MonoBehaviour
     private void Start()
     {
         _cam = Camera.main;
-
         ResetStrips();
+        GameManager.OnVictoryState += RestLaunchOnVictory;
 
         //_trajectoryPoints = new GameObject[howManyTrajectoryPoints];
         //trajectoryPointsParent.gameObject.SetActive(false);
@@ -59,6 +59,9 @@ public class LaunchBird : MonoBehaviour
     {
         if (controller.inputControls.isLeftMousePressed)
         {
+            if (controller.previousBirdAbility != null && 
+                !controller.previousBirdAbility.canLaunchNextBird) return;
+
             _mousePosition = _cam.ScreenToWorldPoint(controller.inputControls.mousePosition);
             RaycastHit2D hitInfo = Physics2D.Raycast(_mousePosition, Vector2.zero, playerLayer);
 
@@ -105,6 +108,10 @@ public class LaunchBird : MonoBehaviour
             controller.bird.canBeLaunched = false;
             controller.bird.isLaunched = true;
             controller.bird.transform.parent = null;
+            if(controller.bird.TryGetComponent<BirdAbility>(out BirdAbility birdAbility))
+            {
+                controller.previousBirdAbility = birdAbility;
+            }
 
             Invoke(nameof(MakeNextBirdReady), makeNextBirdReadyAfter);
         }
@@ -139,11 +146,6 @@ public class LaunchBird : MonoBehaviour
         _canLaunch = false;
     }
 
-    private Vector2 CalculateTrajectoryPosition(float time)
-    {
-        return (Vector2)controller.bird.transform.position + (_dragForce * time) + (0.5f * time * time * Physics2D.gravity);
-    }
-
     private void MakeNextBirdReady()
     {
         controller.birds.RemoveAt(0);
@@ -153,5 +155,16 @@ public class LaunchBird : MonoBehaviour
     private void OnDisable()
     {
         CancelInvoke();
+
+        GameManager.OnVictoryState -= RestLaunchOnVictory;
+    }
+
+    private void RestLaunchOnVictory()
+    {
+        if (controller.bird.isLaunched) return;
+
+        controller.bird.transform.position = controller.birdLaunchTransform.position;
+        ResetStrips();
+        ResetValues();
     }
 }
