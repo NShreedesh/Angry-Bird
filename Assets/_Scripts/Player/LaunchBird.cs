@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class LaunchBird : MonoBehaviour
@@ -25,12 +26,6 @@ public class LaunchBird : MonoBehaviour
     [SerializeField] private LineRenderer frontStripLineRenderer;
     [SerializeField] private LineRenderer backStripLineRenderer;
 
-    [Header("Trajectory Info")]
-    [SerializeField] private GameObject trajectoryPoint;
-    private GameObject[] _trajectoryPoints;
-    [SerializeField] private int howManyTrajectoryPoints;
-    [SerializeField] private Transform trajectoryPointsParent;
-
     [Header("Bird Ready Info")]
     [SerializeField] private int makeNextBirdReadyAfter = 1;
 
@@ -39,13 +34,6 @@ public class LaunchBird : MonoBehaviour
         _cam = Camera.main;
         ResetStrips();
         GameManager.OnVictoryState += RestLaunchOnVictory;
-
-        //_trajectoryPoints = new GameObject[howManyTrajectoryPoints];
-        //trajectoryPointsParent.gameObject.SetActive(false);
-        //for (int i = 0; i < howManyTrajectoryPoints; i++)
-        //{
-        //    _trajectoryPoints[i] = Instantiate(trajectoryPoint, transform.position, Quaternion.identity, trajectoryPointsParent);
-        //}
     }
 
     private void Update()
@@ -129,8 +117,6 @@ public class LaunchBird : MonoBehaviour
 
         frontStripLineRenderer.SetPosition(1, position);
         backStripLineRenderer.SetPosition(1, position);
-
-        trajectoryPointsParent.gameObject.SetActive(true);
     }
 
     private void ResetStrips()

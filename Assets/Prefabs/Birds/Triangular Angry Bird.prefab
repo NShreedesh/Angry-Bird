@@ -144,6 +144,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1532888669989071225}
   birdPowerUpSprite: {fileID: -970554608, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   birdCollidedSprite: {fileID: 901827053, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
+  birdAbilityParticle: {fileID: 1237598573, guid: a7cfcdc3f893ef54b99175efabe1fc7e, type: 3}
   speedMultiplier: 1.7
 --- !u!1 &1532888669989071226
 GameObject:

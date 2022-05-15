@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class BirdAbility : MonoBehaviour
 {
@@ -20,6 +19,9 @@ public class BirdAbility : MonoBehaviour
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected Sprite birdPowerUpSprite;
     [SerializeField] protected Sprite birdCollidedSprite;
+
+    [Header("Particles Info")]
+    [SerializeField] private ParticleSystem birdAbilityParticle;
 
     private void OnEnable()
     {
@@ -52,6 +54,9 @@ public class BirdAbility : MonoBehaviour
 
     protected virtual void UseAbility()
     {
+        ParticleSystem abilityPartilce = Instantiate(birdAbilityParticle, transform.position, Quaternion.identity);
+        abilityPartilce.Play();
+
         hasUsedAbility = true;
         Invoke(nameof(TimeToLaunchNextBird), 1);
     }

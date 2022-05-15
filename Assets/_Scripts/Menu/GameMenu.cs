@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -99,6 +98,7 @@ public class GameMenu : MonoBehaviour
 
     private void GotoMenu()
     {
+        GameManager.Instance.UpdateGameState(GameManager.GameState.Menu);
         SceneManager.LoadScene(0);
     }
 
