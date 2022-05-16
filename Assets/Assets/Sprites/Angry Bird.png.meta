@@ -565,6 +565,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ThreeInOne Angry Bird 1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 559
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1791078a7fe10fa4ab582c65301fe2e8
+      internalID: 42268571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeInOne Angry Bird  2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00f03c59315e684296ac5efb3a15070
+      internalID: -2015552462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeInOne Angry Bird  4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 402
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a2f16a6b03abb4783b816e1b2a2943
+      internalID: -882958459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeInOne Angry Bird  3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 432
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b626a017ed6a3884aa29fc8a8bff4544
+      internalID: -1995718829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeInOneBird_Wing 1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 295
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d947a9f9885f1f4eb8f4ed811fe237d
+      internalID: 1042005696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThreeInOneBird_Wing 2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 245
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47577b15d2a46934fae0249100de7175
+      internalID: 1948607058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb Angry Bird 1
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 160
+        width: 66
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c985d43f8e428d74a9f23c851b906f65
+      internalID: 1996506215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb Angry Bird 2
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 440
+        width: 64
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441a4a345134be4428e68dbd47053308
+      internalID: -1843709993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb Angry Bird 3
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 440
+        width: 63
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad7cf4c4f7fe82469c5d12629c0dac5
+      internalID: 1104699890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BombBird_Wing 1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 345
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63301828c1cbacf49805f2d89b6ffdcc
+      internalID: 1262971950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -578,11 +788,14 @@ TextureImporter:
     nameFileIdTable:
       Glass 3: 662952777
       Smoke2: -2062977273
+      Bomb Angry Bird 2: -1843709993
+      Bomb Angry Bird 1: 1996506215
       Catapault_Front: -8614203258021995029
       Dot1: 751035052
       Smoke4: 1695083504
       Wood3: -1211448689
       Smoke3: 1659870014
+      BombBird_Wing 1: 1262971950
       Catapault_Back: 3880404249073630250
       Glass 5: -1621092681
       Simple Enemy_2: -38155583
@@ -591,11 +804,15 @@ TextureImporter:
       Simple Enemy_7: -1527150097
       Simple Enemy_6: 242713358
       RedBird_Wing 1: 1132393151
+      ThreeInOne Angry Bird  2: -2015552462
       Simple Enemy_1: -1258499740
       Smoke1: -1632786127
       Triangle Angry Bird 1: -1264523514
+      ThreeInOneBird_Wing 2: 1948607058
       Wood2: 363946975
       Glass 2: 1699729970
+      ThreeInOne Angry Bird  3: -1995718829
+      ThreeInOne Angry Bird  4: -882958459
       TriangleBird_Wing 2: -29325456
       Triangle Angry Bird 2: -970554608
       TriangleBird_Wing 1: 1884035957
@@ -605,6 +822,9 @@ TextureImporter:
       Triangle Angry Bird 3: 901827053
       RedBird_Wing 2: -1886175083
       Glass 1: -1255232131
+      ThreeInOne Angry Bird 1: 42268571
+      Bomb Angry Bird 3: 1104699890
+      ThreeInOneBird_Wing 1: 1042005696
       wood1: 207926600
       Red Angry Bird: -6979714528961782056
   spritePackingTag: 

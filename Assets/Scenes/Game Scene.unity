@@ -2759,6 +2759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8574569241693333040, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
+      propertyPath: birdPrefab
+      value: 
+      objectReference: {fileID: 8611519984310654739, guid: 888420d27708eab43aacafc48fcd8b33, type: 3}
     - target: {fileID: 8574569241693333042, guid: d54caf9f1b3456c4287994f31f8b68c8, type: 3}
       propertyPath: m_RootOrder
       value: 2
