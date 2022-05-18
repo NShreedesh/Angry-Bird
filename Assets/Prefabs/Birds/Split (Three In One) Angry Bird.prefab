@@ -96,10 +96,9 @@ GameObject:
   - component: {fileID: 8938358135728832786}
   - component: {fileID: 580279971018125870}
   - component: {fileID: 8938358135728832813}
-  - component: {fileID: 580279972071122064}
-  - component: {fileID: 8496843935898255579}
+  - component: {fileID: 3982714240821864825}
   m_Layer: 6
-  m_Name: ThreeInOne Angry Bird
+  m_Name: Split (Three In One) Angry Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +183,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &580279972071122064
+--- !u!114 &3982714240821864825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,26 +208,3 @@ MonoBehaviour:
   enemyHitVelocity: 0.8
   damageAmount: 1
   destroyableHitVelocity: 5
---- !u!114 &8496843935898255579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8938358135728832784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 776488babf172c146bdbeb82dc4081e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bird: {fileID: 580279972071122064}
-  rb: {fileID: 8938358135728832813}
-  hasUsedAbility: 0
-  canLaunchNextBird: 0
-  spriteRenderer: {fileID: 8938358135158951275}
-  birdPowerUpSprite: {fileID: -2015552462, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
-  birdCollidedSprite: {fileID: -882958459, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
-  birdAbilityParticle: {fileID: 2376627444386546701, guid: 8b863271dbe5d7c4e96ed31ba7ec6e68, type: 3}
-  splitBird: {fileID: 8938358135728832784, guid: 82a403187eaa7e0439e846ff4fea7ae2, type: 3}
-  xForceAmount: 3
-  yForceAmount: 1.5

@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour, IDamagable
     [Header("Particles Info")]
     [SerializeField] private ParticleSystem enemyDestroyParticle;
 
+    [Header("Death Info")]
+    [SerializeField] private float timeToDie = 0.2f;
+
     private void Start()
     {
         health = damageSprites.Length;
@@ -24,7 +27,7 @@ public class Enemy : MonoBehaviour, IDamagable
         {
             health = 0;
             spriteRenderer.sprite = damageSprites[damageSprites.Length - health - 1];
-            Invoke(nameof(Die), 0.3f);
+            Invoke(nameof(Die), timeToDie);
         }
         else
         {

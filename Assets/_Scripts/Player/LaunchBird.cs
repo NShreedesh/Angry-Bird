@@ -33,7 +33,7 @@ public class LaunchBird : MonoBehaviour
     {
         _cam = Camera.main;
         ResetStrips();
-        GameManager.OnVictoryState += RestLaunchOnVictory;
+        GameManager.OnVictoryState += ResetLaunchOnVictory;
     }
 
     private void Update()
@@ -142,10 +142,10 @@ public class LaunchBird : MonoBehaviour
     {
         CancelInvoke();
 
-        GameManager.OnVictoryState -= RestLaunchOnVictory;
+        GameManager.OnVictoryState -= ResetLaunchOnVictory;
     }
 
-    private void RestLaunchOnVictory()
+    private void ResetLaunchOnVictory()
     {
         if (controller.bird.isLaunched) return;
 

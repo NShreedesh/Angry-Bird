@@ -174,3 +174,4 @@ MonoBehaviour:
   - {fileID: -38155583, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   - {fileID: 967780284, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   enemyDestroyParticle: {fileID: 645987249866604025, guid: 5e384798800716a41871aeb6f20df8c3, type: 3}
+  timeToDie: 0.2
