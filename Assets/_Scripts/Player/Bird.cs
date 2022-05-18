@@ -22,10 +22,23 @@ public class Bird : MonoBehaviour
     [Header("Destroyable Hit Info")]
     [SerializeField] private float destroyableHitVelocity = 2;
 
+    [Header("Collision Info")]
+    private bool isCollided;
+
+    [Header("Trajectory Info")]
+    [SerializeField] private float totalTime = 0.1f;
+    private float time;
+    private Trajectory trajectory;
+
     private void Awake()
     {
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
+    }
+
+    private void Start()
+    {
+        trajectory = GameObject.FindGameObjectWithTag("Trajectory").GetComponent<Trajectory>();
     }
 
     private void Update()
@@ -39,10 +52,14 @@ public class Bird : MonoBehaviour
             Destroy(gameObject);
             isDestroyed = true;
         }
+
+        HandleTrajectory();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        isCollided = true;
+
         if (rb.velocity.magnitude >= birdParticlesVelocity)
         {
             BirdParticlesSpawn();
@@ -85,5 +102,17 @@ public class Bird : MonoBehaviour
         if (!collision.transform.TryGetComponent<IDestroyable>(out IDestroyable destroyable)) return;
 
         destroyable.Destroy();
+    }
+
+    private void HandleTrajectory()
+    {
+        if (isCollided) return;
+
+        time += Time.deltaTime;
+        if (time >= totalTime)
+        {
+            trajectory.TrajectoryPlacement(transform);
+            time = 0;
+        }
     }
 }

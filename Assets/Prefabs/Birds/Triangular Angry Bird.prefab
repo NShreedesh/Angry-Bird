@@ -125,6 +125,7 @@ MonoBehaviour:
   enemyHitVelocity: 0.8
   damageAmount: 1
   destroyableHitVelocity: 5
+  totalTime: 0.1
 --- !u!114 &2063877646585029833
 MonoBehaviour:
   m_ObjectHideFlags: 0

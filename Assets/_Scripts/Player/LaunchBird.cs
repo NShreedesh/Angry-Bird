@@ -91,6 +91,7 @@ public class LaunchBird : MonoBehaviour
                 return;
             }
 
+            controller.trajectory.DisableAllTrajectoryPoints();
             controller.rb.isKinematic = false;
             controller.rb.velocity = _dragForce;
             controller.bird.canBeLaunched = false;
@@ -147,6 +148,7 @@ public class LaunchBird : MonoBehaviour
 
     private void ResetLaunchOnVictory()
     {
+        if (controller.bird == null) return;
         if (controller.bird.isLaunched) return;
 
         controller.bird.transform.position = controller.birdLaunchTransform.position;

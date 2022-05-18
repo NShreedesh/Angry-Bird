@@ -208,3 +208,4 @@ MonoBehaviour:
   enemyHitVelocity: 0.8
   damageAmount: 1
   destroyableHitVelocity: 5
+  totalTime: 0.1

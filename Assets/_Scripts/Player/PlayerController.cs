@@ -15,11 +15,14 @@ public class PlayerController : MonoBehaviour
     [Header("Bird Info")]
     public GameObject birdPrefab;
     public Transform birdLaunchTransform;
-    public Bird bird;
-    public BirdAbility previousBirdAbility;
+    [HideInInspector] public Bird bird;
+    [HideInInspector] public BirdAbility previousBirdAbility;
 
     [Header("Physics Info")]
-    public Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
+
+    [Header("Trajectory Info")]
+    public Trajectory trajectory;
 
     private void Start()
     {

@@ -323,6 +323,7 @@ MonoBehaviour:
   bird: {fileID: 0}
   previousBirdAbility: {fileID: 0}
   rb: {fileID: 0}
+  trajectory: {fileID: 0}
 --- !u!114 &8574569241693333043
 MonoBehaviour:
   m_ObjectHideFlags: 0

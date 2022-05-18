@@ -8,7 +8,7 @@ public class BirdAbility : MonoBehaviour
     [Header("Other Scipts Info")]
     [SerializeField] private Bird bird;
 
-    [Header("Phusics Info")]
+    [Header("Physics Info")]
     [SerializeField] protected Rigidbody2D rb;
 
     [Header("Ability Info")]

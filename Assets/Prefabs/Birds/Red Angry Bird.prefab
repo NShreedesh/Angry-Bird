@@ -124,7 +124,7 @@ MonoBehaviour:
   enemyHitVelocity: 0.8
   damageAmount: 1
   destroyableHitVelocity: 5
-  birdAbility: {fileID: 0}
+  totalTime: 0.1
 --- !u!1 &8360647740061924646
 GameObject:
   m_ObjectHideFlags: 0
