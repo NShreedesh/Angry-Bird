@@ -698,7 +698,7 @@ TextureImporter:
         x: 406
         y: 160
         width: 66
-        height: 80
+        height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -713,48 +713,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb Angry Bird 2
-      rect:
-        serializedVersion: 2
-        x: 712
-        y: 440
-        width: 64
-        height: 83
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 441a4a345134be4428e68dbd47053308
-      internalID: -1843709993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bomb Angry Bird 3
-      rect:
-        serializedVersion: 2
-        x: 776
-        y: 440
-        width: 63
-        height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ad7cf4c4f7fe82469c5d12629c0dac5
-      internalID: 1104699890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: BombBird_Wing 1
       rect:
         serializedVersion: 2
@@ -763,7 +721,7 @@ TextureImporter:
         width: 11
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -771,6 +729,48 @@ TextureImporter:
       bones: []
       spriteID: 63301828c1cbacf49805f2d89b6ffdcc
       internalID: 1262971950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb Angry Bird 3
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 441
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a713a91da8a8a4c8e63ff73b287a5c
+      internalID: -1843709993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomb Angry Bird 2
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 217
+        width: 65
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7062d2cdaff2bdf4d84025e8775fd4bf
+      internalID: 618086231
       vertices: []
       indices: 
       edges: []
@@ -788,7 +788,7 @@ TextureImporter:
     nameFileIdTable:
       Glass 3: 662952777
       Smoke2: -2062977273
-      Bomb Angry Bird 2: -1843709993
+      Bomb Angry Bird 2: 618086231
       Bomb Angry Bird 1: 1996506215
       Catapault_Front: -8614203258021995029
       Dot1: 751035052
@@ -823,7 +823,7 @@ TextureImporter:
       RedBird_Wing 2: -1886175083
       Glass 1: -1255232131
       ThreeInOne Angry Bird 1: 42268571
-      Bomb Angry Bird 3: 1104699890
+      Bomb Angry Bird 3: -1843709993
       ThreeInOneBird_Wing 1: 1042005696
       wood1: 207926600
       Red Angry Bird: -6979714528961782056

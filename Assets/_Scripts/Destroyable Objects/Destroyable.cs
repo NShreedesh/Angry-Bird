@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Destroyable : MonoBehaviour, IDestroyable
+public class Destroyable : MonoBehaviour, IDestroyable, IBombable
 {
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;

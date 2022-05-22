@@ -45,7 +45,7 @@ public class BirdAbility : MonoBehaviour
         CancelInvoke();
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         hasUsedAbility = true;
         canLaunchNextBird = true;
