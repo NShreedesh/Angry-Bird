@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BombAbility : BirdAbility
@@ -7,6 +8,19 @@ public class BombAbility : BirdAbility
     [SerializeField] private float radius = 0.3f;
     [SerializeField] private float forceMultiplier = 3;
     [SerializeField] private bool isCollided;
+
+    [Header("Camera Shake Info")]
+    [SerializeField] private float duration = 0.1f;
+    [SerializeField] private float magnitude = 0.15f;
+    private CameraShake cameraShake;
+
+    [Header("Particle Effect")]
+    [SerializeField] private ParticleSystem bombBlastParticleEffect;
+
+    private void Awake()
+    {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+    }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
@@ -50,6 +64,17 @@ public class BombAbility : BirdAbility
                 col.attachedRigidbody.AddForce(distance * forceMultiplier, ForceMode2D.Impulse);
             }
         }
+        StartCoroutine(cameraShake.Shake(duration, magnitude));
+        Destroy(gameObject, duration);
+
+        StartCoroutine(PlayParticleSystem());
+    }
+
+    private IEnumerator PlayParticleSystem()
+    {
+        yield return new WaitForSeconds((int)duration * 1000);
+        ParticleSystem blastParticle = Instantiate(bombBlastParticleEffect, transform.position, transform.rotation);
+        blastParticle.Play();
     }
 
     private void OnDrawGizmos()
@@ -60,5 +85,6 @@ public class BombAbility : BirdAbility
     private void OnDisable()
     {
         CancelInvoke();
+        StopAllCoroutines();
     }
 }

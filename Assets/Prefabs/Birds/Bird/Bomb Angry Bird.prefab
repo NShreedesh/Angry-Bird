@@ -147,8 +147,12 @@ MonoBehaviour:
   birdCollidedSprite: {fileID: -1843709993, guid: c2c5421c5250a1a4e8836f9fcd241e02, type: 3}
   birdAbilityParticle: {fileID: 2678371002152203790, guid: 528dd9ff9b9866847a602f7d780c7a23, type: 3}
   timeToBlast: 1
-  radius: 1
+  radius: 3
   forceMultiplier: 12
+  isCollided: 0
+  duration: 0.1
+  magnitude: 0.15
+  bombBlastParticleEffect: {fileID: 3565556259048454795, guid: 582f52882bfa22149b93158ec3a06e57, type: 3}
 --- !u!1 &8611519984881621867
 GameObject:
   m_ObjectHideFlags: 0

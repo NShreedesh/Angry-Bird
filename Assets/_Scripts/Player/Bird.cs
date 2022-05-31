@@ -76,7 +76,7 @@ public class Bird : MonoBehaviour
         }
     }
 
-    private void BirdParticlesSpawn()
+    public void BirdParticlesSpawn()
     {
         GameObject birdParticle = Instantiate(birdParticles.gameObject, transform.position, Quaternion.identity);
         ParticleSystem particlesSystemForBird = birdParticle.GetComponent<ParticleSystem>();

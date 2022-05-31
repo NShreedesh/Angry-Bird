@@ -318,7 +318,7 @@ MonoBehaviour:
   birdSpawnTransform: {fileID: 1093042761}
   birdOffset: 0.7
   birds: []
-  birdPrefab: {fileID: 1532888669418104066, guid: ba8f5093be7bfb94ea57b766bf476002, type: 3}
+  birdPrefab: {fileID: 8611519984310654739, guid: 888420d27708eab43aacafc48fcd8b33, type: 3}
   birdLaunchTransform: {fileID: 8574569242047536721}
   bird: {fileID: 0}
   previousBirdAbility: {fileID: 0}
