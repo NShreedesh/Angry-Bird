@@ -51,13 +51,11 @@ public class BombAbility : BirdAbility
     {
         Collider2D[] collison = Physics2D.OverlapCircleAll(transform.position, radius);
 
-
         foreach (Collider2D col in collison)
         {
             if (col.TryGetComponent<IBombable>(out IBombable bombable))
             {
                 Vector2 distance = col.transform.position - transform.position;
-
                 distance.x = Mathf.Sign(distance.x) == 1 ? 1 : -1;
                 distance.y = Mathf.Sign(distance.y) == 1 ? 1 : -1;
 
