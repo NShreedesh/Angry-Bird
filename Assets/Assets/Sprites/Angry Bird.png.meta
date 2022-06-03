@@ -763,7 +763,7 @@ TextureImporter:
         width: 65
         height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -771,6 +771,27 @@ TextureImporter:
       bones: []
       spriteID: 7062d2cdaff2bdf4d84025e8775fd4bf
       internalID: 618086231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BombBird_Destroy
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 525
+        width: 88
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804b55b2bab78c74289df5f641022867
+      internalID: 1849923381
       vertices: []
       indices: 
       edges: []
@@ -816,6 +837,7 @@ TextureImporter:
       TriangleBird_Wing 2: -29325456
       Triangle Angry Bird 2: -970554608
       TriangleBird_Wing 1: 1884035957
+      BombBird_Destroy: 1849923381
       Glass 6: -1450595134
       Simple Enemy_5: 745053716
       Simple Enemy_3: 967780284

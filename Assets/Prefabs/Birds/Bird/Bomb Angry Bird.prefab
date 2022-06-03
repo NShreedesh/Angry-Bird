@@ -150,9 +150,9 @@ MonoBehaviour:
   radius: 3
   forceMultiplier: 12
   isCollided: 0
-  duration: 0.1
-  magnitude: 0.15
-  bombBlastParticleEffect: {fileID: 3565556259048454795, guid: 582f52882bfa22149b93158ec3a06e57, type: 3}
+  duration: 0.15
+  magnitude: 0.4
+  bombBlastParticleEffect: {fileID: 3565556259048454795, guid: efca3a0a3b5878c4fad44a21b433a4e9, type: 3}
 --- !u!1 &8611519984881621867
 GameObject:
   m_ObjectHideFlags: 0
